@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/"?>
+<window id="main" title="Gecko Table" width="1000" height="800" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="chrome://table/content/assets/init.js"/>
+	<button label="Booya!" oncommand="table.sayHello();"/>
+</window>

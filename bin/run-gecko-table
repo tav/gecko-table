@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+# Public Domain (-) 2012 The Gecko Table Authors.
+# See the Gecko Table UNLICENSE file for details.
+
+_SCRIPT_ROOT=$(dirname $(dirname $0))
+
+case `uname -s | tr 'A-Z' 'a-z'` in
+	darwin)
+		cd $_SCRIPT_ROOT
+		/Applications/Firefox.app/Contents/MacOS/firefox-bin -app `pwd`/app/application.ini;;
+	*)
+		echo "ERROR: Unknown system operating system: $(uname -s)"
+		exit
+esac

@@ -1,0 +1,24 @@
+# Public Domain (-) 2012 The Gecko Table Authors.
+# See the Gecko Table UNLICENSE file for details.
+
+generate:
+
+- init.js:
+    source:
+      - raw: |
+          // Public Domain (-) 2012 The Gecko Table Authors.
+          // See the Gecko Table UNLICENSE file for details.
+      - %(AMPIFY_ROOT)s/src/coffee/define.coffee
+      - %(AMPIFY_ROOT)s/src/coffee/domly.coffee
+      - src/table.coffee
+
+output.directory: app/view/assets/
+output.hashed: false
+
+css.embed.path.root: gfx
+css.embed.only: yes
+css.embed.url.base: /static/
+
+profile.dev:
+  css.compressed: false
+  js.compressed: false

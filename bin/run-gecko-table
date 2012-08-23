@@ -4,11 +4,17 @@
 # See the Gecko Table UNLICENSE file for details.
 
 _SCRIPT_ROOT=$(dirname $(dirname $0))
+assetgen $_SCRIPT_ROOT/assetgen.yaml --profile dev
+
+_exit_status=$?
+if [ $_exit_status -ne 0 ]; then
+	exit $_exit_status
+fi
 
 case `uname -s | tr 'A-Z' 'a-z'` in
 	darwin)
 		cd $_SCRIPT_ROOT
-		/Applications/Firefox.app/Contents/MacOS/firefox-bin -app `pwd`/app/application.ini;;
+		/Applications/FirefoxNightly.app/Contents/MacOS/firefox-bin -app `pwd`/app/application.ini;;
 	*)
 		echo "ERROR: Unknown system operating system: $(uname -s)"
 		exit

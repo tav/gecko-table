@@ -2,5 +2,22 @@
 <?xml-stylesheet href="chrome://global/skin/"?>
 <window id="main" title="Gecko Table" width="1000" height="800" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script src="chrome://table/content/assets/init.js"/>
-	<button label="Booya!" oncommand="table.sayHello();"/>
+	<hbox>
+		<button label="Toggle Fullscreen!" oncommand="table.toggleFullscreen();"/>
+		<button label="New Sheet" oncommand="table.newSheet();"/>
+	<!--
+		<button label="New Sheet [Upper]" oncommand="table.newSheet('a');"/>
+		<button label="New Sheet [Lower]" oncommand="table.newSheet('b');"/>
+	-->
+		<button label="Move Left" oncommand="table.move('l');"/>
+		<button label="Move Right" oncommand="table.move('r');"/>
+		<button label="Move Up" oncommand="table.move('u');"/>
+		<button label="Move Down" oncommand="table.move('d');"/>
+		<button label="Swap Controls" oncommand="table.swap();"/>
+	</hbox>
+	<stack id="sheets" flex="1" style="border: 5px solid black;"></stack>
+	<!--
+	<hbox id="a" style="border: 1px solid #c00"></hbox>
+	<hbox id="b" style="border: 1px solid #0c0"></hbox>
+	-->
 </window>

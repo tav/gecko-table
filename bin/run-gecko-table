@@ -15,6 +15,9 @@ case `uname -s | tr 'A-Z' 'a-z'` in
 	darwin)
 		cd $_SCRIPT_ROOT
 		/Applications/FirefoxNightly.app/Contents/MacOS/firefox-bin -app `pwd`/app/application.ini;;
+	linux)
+		cd $_SCRIPT_ROOT
+		/usr/bin/firefox -app `pwd`/app/application.ini;;
 	*)
 		echo "ERROR: Unknown system operating system: $(uname -s)"
 		exit
